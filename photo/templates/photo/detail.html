@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+     <img src="{{ photo.image.url }}" alt="" width="400px" height="300px">
+     <h4>{{photo.name}}</h4>
+     </hr>
+     <p>
+     {{photo.description}}</p>
+     <p>{{photo.date}}</p>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

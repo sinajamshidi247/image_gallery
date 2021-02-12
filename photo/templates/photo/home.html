@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+
+
+
+
+ <div class="btn-group">
+            <a href="{% url 'photo:home' %}" class="btn btn-danger">All</a>
+        </div>
+
+
+
+{% for category in categories %}
+
+        <div class="btn-group">
+            <a href="{% url 'photo:home' %}?category={{category.name}}" class="btn btn-danger">{{ category.name }}</a>
+             
+            
+        </div>
+
+
+{% endfor %}</br></br>
+
+
+
+<a href="{% url 'photo:add' %}" id="sina" class="btn btn-primary">Add Photo</a>
+
+
+
+{% for photo in photos %}
+
+
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="{% url 'photo:detail' photo.id %}" class="thumbnail">
+     <img src="{{ photo.image.url }}" alt="" width="400px" height="300px">
+    </a>
+  </div>
+</div>
+ 
+
+{% endfor %}
+{% endblock %}
