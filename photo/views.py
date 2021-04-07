@@ -23,6 +23,7 @@ def detail(request,pk):
 
 
 
+
 def addPhoto(request):
     categories = Category.objects.all()
 
